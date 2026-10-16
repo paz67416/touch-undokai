@@ -37,15 +37,6 @@
   --ita:#262A3B;
   --nawa:#D2AC68;
   --nawa-deep:#9B7841;
-  --suna:#EBD5A4;
-  --suna-deep:#C9AE76;
-  --suna-line:rgba(255,252,245,.75);
-  --hada:#F6D3AE;
-  --kami:#3A2A22;
-  --pan:#D08F42;
-  --pan-hi:#F3C98A;
-  --pan-deep:#8C5620;
-  --ok:#1E8E4E;
   --veil:rgba(28,26,30,.18);
   --dim:rgba(28,26,30,.55);
   --chalk-faint:rgba(255,252,245,.34);
@@ -85,6 +76,7 @@ button{touch-action:manipulation}
 .logo .l2{display:block;font-size:clamp(34px,11.6vw,66px);text-shadow:0 4px 0 var(--aka-deep)}
 .edition{justify-self:start;margin:4px 0 0;padding:3px 12px 4px;border-radius:999px;border:2px solid var(--shiro);font-weight:900;font-size:14px;letter-spacing:.2em}
 .edition.full{background:var(--kin);color:var(--sumi);border-color:var(--sumi);box-shadow:0 3px 0 var(--aka-deep)}
+@media (max-height:740px){.hero{padding-block:calc(30px + env(safe-area-inset-top,0px)) 16px}.hero-in{gap:6px}.logo .l1{font-size:clamp(48px,16vw,90px)}.logo .l2{font-size:clamp(30px,9.6vw,56px)}.edition{margin-top:2px}}
 .maku{flex:none;height:22px;background:repeating-linear-gradient(90deg,var(--aka) 0 22px,var(--shiro) 22px 44px);border-block:2px solid var(--sumi)}
 .tbody{flex:none;padding-block:22px calc(32px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .tbody-in{max-width:560px;margin-inline:auto;display:grid;gap:18px}
@@ -109,37 +101,9 @@ button{touch-action:manipulation}
 .program li{display:grid;grid-template-columns:36px minmax(0,1fr) auto;column-gap:12px;row-gap:2px;align-items:center;padding:11px 14px}
 .program li+li{border-top:2px dashed var(--shiro-deep)}
 .program .no{grid-row:1 / span 2;width:36px;height:36px;border-radius:50%;background:var(--aka);color:var(--shiro);display:grid;place-items:center;font-family:var(--f-display);font-size:18px}
-.program .name{grid-column:2;font-family:var(--f-display);font-size:19px;line-height:1.2}
+.program .name{grid-column:2;font-family:var(--f-display);font-size:19px;font-size:clamp(15px,4.8vw,19px);line-height:1.2;overflow-wrap:normal}
 .program .desc{grid-column:2;font-size:13.5px;font-weight:700;color:var(--muted);line-height:1.4}
-.program .sw{grid-column:3;grid-row:1 / span 2;min-width:72px;border:2px solid var(--sumi);border-radius:999px;padding:7px 12px;font-weight:900;font-size:14px;background:var(--kin);box-shadow:0 3px 0 var(--sumi);cursor:pointer}
-.program .sw[aria-pressed="false"]{background:var(--shiro);color:var(--muted);box-shadow:0 3px 0 var(--shiro-deep);border-color:var(--muted)}
-.program li.off .no{background:var(--shiro-deep);color:var(--muted)}
-.program li.off .name{color:var(--muted)}
-.pro-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:10px 14px;border-bottom:2px dashed var(--shiro-deep)}
-.pro-head p{margin:0;font-weight:900;font-size:14px}
-.hint{margin:0;font-size:13px;font-weight:700;color:var(--muted);line-height:1.5}
-.hint.warn{color:var(--aka)}
-.seg{display:inline-flex;border:2px solid var(--sumi);border-radius:12px;overflow:hidden;background:var(--shiro)}
-.seg button{border:0;background:transparent;padding:8px 14px;font-weight:900;font-size:15px;cursor:pointer}
-.seg button+button{border-left:2px solid var(--sumi)}
-.seg button[aria-pressed="true"]{background:var(--sumi);color:var(--shiro)}
-.row-set{display:grid;gap:6px}
-.row-set>label,.row-set>.lab{font-weight:900;font-size:14px}
-select.hc{width:100%;max-width:100%;border:2px solid var(--sumi);border-radius:12px;padding:10px 12px;font-size:16px;font-weight:700;background:var(--shiro)}
-.names{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.names label{display:grid;gap:6px;min-width:0}
-.names .tag{justify-self:start}
-.names input{width:100%;min-width:0;border:2px solid var(--sumi);border-radius:12px;padding:10px 12px;font-size:16px;font-weight:700;background:var(--shiro)}
-.names .aka input{border-color:var(--aka);box-shadow:inset 0 0 0 1px var(--aka)}
-.rec-list{margin:0;padding:0;list-style:none;display:grid;gap:4px}
-.rec-list li{font-weight:700;font-size:14px;line-height:1.5;font-variant-numeric:tabular-nums}
-.rec-list b{font-weight:900}
-.rec-sub{margin:0;font-weight:900;font-size:13px;color:var(--muted);letter-spacing:.08em}
-.rec-best{margin:0;font-weight:700;font-size:14px;line-height:1.6;font-variant-numeric:tabular-nums}
-.rec-best b{font-weight:900}
-.rec-empty{margin:0;font-weight:700;color:var(--muted)}
 .btn-line{justify-self:start;border:2px solid var(--sumi);background:var(--shiro);color:var(--sumi);border-radius:999px;padding:8px 16px;font-weight:900;font-size:14px;cursor:pointer;box-shadow:0 3px 0 var(--sumi)}
-.btn-line.armed{background:var(--aka);color:var(--shiro);border-color:var(--aka-deep);box-shadow:0 3px 0 var(--aka-deep)}
 .sound-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px}
 .sound-note{margin:0;font-size:12.5px;font-weight:700;color:var(--muted)}
 .adult{border-top:2px solid var(--sumi);padding-top:14px;display:grid;gap:8px}
@@ -171,6 +135,7 @@ select.hc{width:100%;max-width:100%;border:2px solid var(--sumi);border-radius:1
 .big{font-family:var(--f-display);font-weight:400;line-height:1.08;white-space:nowrap;color:var(--fg);text-shadow:0 .06em 0 var(--depth);font-size:15vmin;font-size:min(17cqw,28cqh);font-variant-numeric:tabular-nums}
 .big.s{font-size:11vmin;font-size:min(12.5cqw,23cqh)}
 .big.xs{font-size:8.5vmin;font-size:min(9.6cqw,19cqh)}
+.big.xxs{font-size:7vmin;font-size:min(7.6cqw,16cqh)}
 .big:empty{display:none}
 .big.has-card{line-height:0;text-shadow:none}
 .big.pop{animation:pop .34s cubic-bezier(.2,.9,.3,1.35)}
@@ -182,7 +147,6 @@ select.hc{width:100%;max-width:100%;border:2px solid var(--sumi);border-radius:1
 .team{flex:none;margin:0;display:flex;align-items:center;gap:10px;max-width:100%;font-family:var(--f-display);font-weight:400;font-size:16px;font-size:min(5cqw,20px);letter-spacing:.3em}
 .team::before,.team::after{content:"";flex:none;width:26px;height:4px;border-radius:2px;background:currentColor;opacity:.4}
 .team-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.hc-chip{flex:none;font-family:var(--f-body);font-weight:900;font-size:12px;letter-spacing:.06em;padding:2px 8px;border-radius:999px;background:var(--kin);color:var(--sumi);border:2px solid var(--sumi)}
 .card{display:inline-grid;place-items:center;width:30vmin;width:min(34cqw,34cqh);aspect-ratio:1;max-width:100%;background:var(--shiro);border:3px solid var(--sumi);border-radius:20%;box-shadow:0 5px 0 var(--sumi)}
 .card svg{display:block;width:76%;height:76%}
 .card.flip{animation:flipin .2s ease-out}
@@ -194,18 +158,15 @@ select.hc{width:100%;max-width:100%;border:2px solid var(--sumi);border-radius:1
 .ripple{position:absolute;z-index:0;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;border:5px solid var(--fg);opacity:0;pointer-events:none;animation:rip .45s ease-out}
 .arena{position:relative;width:100%;flex:1;min-height:0}
 .arena:empty{display:none}
-.rest{position:absolute;inset:0;z-index:4;display:grid;place-items:center;align-content:center;gap:8px;background:var(--veil);pointer-events:none}
-.rest span{font-family:var(--f-display);font-size:22px;font-size:min(8cqw,30px);color:var(--fg);text-shadow:0 2px 0 var(--depth)}
-.rest i{display:block;width:40%;height:8px;border-radius:4px;background:var(--kin);transform-origin:left center}
 .seam{position:relative;z-index:5;height:24px}
-.seam-btn{position:absolute;top:50%;height:42px;margin-top:-21px;padding:0;display:grid;place-items:center;border-radius:21px;border:2px solid var(--sumi);background:var(--shiro);box-shadow:0 3px 0 var(--sumi);cursor:pointer}
-.seam-btn.snd{right:max(10px,env(safe-area-inset-right,0px));width:42px}
-.seam-btn.quit{left:max(10px,env(safe-area-inset-left,0px));min-width:42px;padding:0 12px;font-weight:900;font-size:13px;color:var(--sumi)}
+.seam-btn{position:absolute;top:50%;height:36px;margin-top:-18px;padding:0;display:grid;place-items:center;border-radius:18px;border:2px solid var(--sumi);background:var(--shiro);box-shadow:0 3px 0 var(--sumi);cursor:pointer}
+.seam-btn.snd{right:max(10px,env(safe-area-inset-right,0px));width:36px}
+.seam-btn.quit{left:max(10px,env(safe-area-inset-left,0px));width:104px;padding:0 6px;font-weight:900;font-size:12px;line-height:1.15;color:var(--sumi);word-break:keep-all}
 .seam-btn.quit.armed{background:var(--aka);color:var(--shiro);border-color:var(--aka-deep)}
 .seam-btn svg{display:block;width:22px;height:22px}
 #tsuna{position:absolute;inset:0;z-index:6;pointer-events:none}
 .rope{position:absolute;left:50%;top:4%;bottom:4%;width:14px;margin-left:-7px;border-radius:7px;background:repeating-linear-gradient(-55deg,var(--nawa) 0 6px,var(--nawa-deep) 6px 9px);box-shadow:0 0 0 2px var(--sumi)}
-.goal{position:absolute;left:33%;right:33%;height:0;border-top:4px dashed}
+.goal{position:absolute;left:38%;right:38%;height:0;border-top:4px dashed}
 .goal.shiro{border-color:var(--sumi)}
 .goal.aka{border-color:var(--shiro)}
 .knot{position:absolute;left:50%;top:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;border:3px solid var(--sumi);background:conic-gradient(var(--aka) 0 25%,var(--shiro) 0 50%,var(--aka) 0 75%,var(--shiro) 0);box-shadow:0 0 0 3px var(--kin);transition:transform .09s ease-out}
@@ -217,7 +178,8 @@ select.hc{width:100%;max-width:100%;border:2px solid var(--sumi);border-radius:1
 .turn-sub{margin:0;font-weight:700;font-size:15px;line-height:1.5}
 @keyframes turnit{0%,20%{transform:rotate(-90deg)}60%,100%{transform:rotate(0)}}
 #play[data-mode="tsuna"] .inner{align-items:flex-start}
-#play[data-mode="tsuna"] .stage{width:38%;align-items:flex-start;text-align:left}
+#play[data-mode="tsuna"] .stage{width:34%;align-items:flex-start;text-align:left}
+#play[data-mode="tsuna"] .board{visibility:hidden}
 #play[data-mode="tsuna"] .big{font-size:9vmin;font-size:min(9.5cqw,20cqh)}
 #play[data-mode="end"] .board{display:none}
 .start:focus-visible,.btn-line:focus-visible,.act:focus-visible,.seam-btn:focus-visible,.seg button:focus-visible,.sw:focus-visible,.note-link:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--kin);outline-offset:3px}
@@ -269,9 +231,9 @@ select.hc{width:100%;max-width:100%;border:2px solid var(--sumi);border-radius:1
             <li>子どもが勝ちやすくなるハンデ（すこし・たくさん）</li>
             <li>何点先取か（3・5・7点）と、遊ぶ種目・順番を選べます</li>
             <li>名前を入れて遊べます</li>
-            <li>対戦の記録（勝った回数・いちばん速いドン）が残ります</li>
+            <li>対戦の記録（名前ごとの勝ち負け・いちばん速いドン・最近の5試合）が残ります</li>
           </ul>
-          <a class="note-link" id="noteLink" href="https://note.com/chodo_lab" target="_blank" rel="noopener">完全版のくわしい説明（note）</a>
+          <a class="note-link" id="noteLink" href="https://note.com/chodo_lab/n/n5d3ebb4cd708" target="_blank" rel="noopener">完全版のくわしい説明（note）</a>
           <p>体験版は、遊んだ内容をどこにも送信しません。このブラウザに覚えるのは、音のオン・オフだけです。</p>
         </section>
         <p class="credit">作った人：<a href="https://note.com/chodo_lab" target="_blank" rel="noopener">余白の実験室</a>　v1.0.0</p>
@@ -293,9 +255,8 @@ select.hc{width:100%;max-width:100%;border:2px solid var(--sumi);border-radius:1
             <button type="button" class="act quit" data-act="quit">おわる</button>
           </div>
         </div>
-        <p class="team"><span class="team-name">しろぐみ</span><span class="hc-chip" hidden></span></p>
+        <p class="team"><span class="team-name">しろぐみ</span></p>
       </div>
-      <div class="rest" hidden><span>おやすみ</span><i></i></div>
     </div>
     <div class="maku seam">
       <button type="button" class="seam-btn quit" id="quit" aria-label="ゲームを やめる">やめる</button>
@@ -314,9 +275,8 @@ select.hc{width:100%;max-width:100%;border:2px solid var(--sumi);border-radius:1
             <button type="button" class="act quit" data-act="quit">おわる</button>
           </div>
         </div>
-        <p class="team"><span class="team-name">あかぐみ</span><span class="hc-chip" hidden></span></p>
+        <p class="team"><span class="team-name">あかぐみ</span></p>
       </div>
-      <div class="rest" hidden><span>おやすみ</span><i></i></div>
     </div>
     <div id="tsuna" aria-hidden="true" hidden>
       <div class="goal shiro" id="goal-shiro"></div>
@@ -368,7 +328,7 @@ let ac=null,noiseBuf=null;
 function ensureAudio(){
   if(!soundOn) return null;
   if(!ac){const C=window.AudioContext||window.webkitAudioContext;if(!C) return null;try{ac=new C();}catch(e){return null;}}
-  if(ac.state==='suspended'){try{const r=ac.resume();if(r&&r.catch) r.catch(()=>{});}catch(e){}}
+  if(ac.state!=='running'&&ac.state!=='closed'){try{const r=ac.resume();if(r&&r.catch) r.catch(()=>{});}catch(e){}}
   return ac;
 }
 function tone(f,d,type,v,delay,f2){
@@ -409,7 +369,7 @@ const title=$('#title'),play=$('#play'),tsuna=$('#tsuna'),knot=$('#knot'),kami=$
 const panels={};
 TEAMS.forEach(t=>{
   const el=document.getElementById('p-'+t);
-  panels[t]={el,board:el.querySelector('.board'),stage:el.querySelector('.stage'),eyebrow:el.querySelector('.eyebrow'),big:el.querySelector('.big'),arena:el.querySelector('.arena'),sub:el.querySelector('.sub'),actions:el.querySelector('.actions'),teamName:el.querySelector('.team-name'),chip:el.querySelector('.hc-chip'),rest:el.querySelector('.rest'),rows:null};
+  panels[t]={el,board:el.querySelector('.board'),stage:el.querySelector('.stage'),eyebrow:el.querySelector('.eyebrow'),big:el.querySelector('.big'),arena:el.querySelector('.arena'),sub:el.querySelector('.sub'),actions:el.querySelector('.actions'),teamName:el.querySelector('.team-name'),chip:null,rest:el.querySelector('.rest'),rows:null};
 });
 function buildBoard(t){
   const box=panels[t].board;box.textContent='';
@@ -435,13 +395,11 @@ function stopLoop(){if(loopRaf) cancelAnimationFrame(loopRaf);loopRaf=0;loopFn=n
 const rand=(a,b)=>a+Math.random()*(b-a);
 const randInt=(a,b)=>Math.floor(rand(a,b+1));
 const pick=a=>a[Math.floor(Math.random()*a.length)];
-function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 
 /* ---------- ハンデ ---------- */
-const helpLv=()=>0;
 
 /* ---------- 表示 ---------- */
-function sizeClass(s){const n=Array.from(s).length;return n<=4?'':n<=6?'s':'xs';}
+function sizeClass(s){const n=Array.from(s).length;return n<=4?'':n<=6?'s':n<=8?'xs':'xxs';}
 function say(t,o){
   const p=panels[t];
   p.eyebrow.textContent=o.eyebrow||'';
@@ -481,8 +439,6 @@ function flash(){TEAMS.forEach(t=>{const el=panels[t].el;el.classList.remove('fl
 function renderTeams(){
   TEAMS.forEach(t=>{
     panels[t].teamName.textContent=NAME[t];
-    const lv=helpLv(t),chip=panels[t].chip;
-    chip.hidden=!lv;chip.textContent=lv===2?'ハンデ たくさん':'ハンデ すこし';
   });
 }
 
@@ -497,7 +453,7 @@ function nextEventId(){
 const activeEvents=()=>EVENTS.map(e=>e.id);
 function startMatch(){
   clearTimers();stopLoop();stopDrums();stopKami();
-  G.score={aka:0,shiro:0};G.round=0;G.seen.clear();G.bag=[];G.cur=null;G.phase='start';
+  G.score={aka:0,shiro:0};G.round=0;G.seen.clear();G.bag=[];G.last=G.cur||G.last;G.cur=null;G.phase='start';
   title.hidden=true;play.hidden=false;document.body.classList.remove('on-title');
   TEAMS.forEach(buildBoard);renderTeams();
   setMode('start');updateBoards();keepAwake();disarmQuit();
@@ -513,7 +469,7 @@ function nextRound(){
 const RUN={};
 function startEvent(){
   const ev=EV[G.cur];
-  G.phase='intro';setMode('intro');
+  G.phase='intro';G.redoing=false;setMode('intro');
   const first=!G.seen.has(ev.id);G.seen.add(ev.id);
   sayBoth({eyebrow:'プログラム '+ev.no+'ばん',big:ev.name,sub:ev.how,mood:'intro'});
   sfx.tick();
@@ -521,7 +477,7 @@ function startEvent(){
 }
 function point(t,m){
   if(G.phase==='result'||G.phase==='end'||G.phase==='idle'||G.phase==='hidden') return;
-  G.phase='result';clearTimers();stopLoop();stopDrums();setMode('result');
+  G.phase='result';G.redoing=false;clearTimers();stopLoop();stopDrums();setMode('result');
   G.score[t]++;updateBoards(t);sfx.point();
   say(t,{eyebrow:'+1てん',big:m.winBig,sub:m.winSub,mood:'win'});
   say(other(t),{eyebrow:'',big:m.loseBig,sub:m.loseSub,mood:'lose'});
@@ -530,7 +486,7 @@ function point(t,m){
 function foul(t,label){
   if(G.phase==='result'||G.phase==='end'||G.phase==='idle'||G.phase==='hidden') return;
   const o=other(t);
-  G.phase='result';clearTimers();stopLoop();stopDrums();setMode('result');
+  G.phase='result';G.redoing=false;clearTimers();stopLoop();stopDrums();setMode('result');
   G.score[o]++;updateBoards(o);sfx.foul();
   say(t,{eyebrow:'あいてに 1てん',big:label,sub:'あわてない、あわてない',mood:'lose'});
   say(o,{eyebrow:'+1てん',big:'ラッキー！',sub:'あいてが '+label.replace('！',''),mood:'win'});
@@ -538,7 +494,7 @@ function foul(t,label){
 }
 const mistake=(t,label)=>foul(t,label);
 function redo(big,sub,fn,ms){
-  G.phase='result';clearTimers();stopLoop();stopDrums();setMode('result');
+  G.phase='result';G.redoing=true;clearTimers();stopLoop();stopDrums();setMode('result');
   sayBoth({eyebrow:'',big:big,sub:sub,mood:'wait'});
   sfx.tick();
   later(fn,ms||1900);
@@ -548,7 +504,7 @@ function endMatch(){
   const w=G.score.aka>=WIN?'aka':'shiro',l=other(w);
   say(w,{eyebrow:G.score[w]+' たい '+G.score[l],big:'ゆうしょう！',sub:NAME[w]+'の かち！',mood:'win'});
   say(l,{eyebrow:G.score[l]+' たい '+G.score[w],big:'ナイスファイト！',sub:'もういっかい やる？',mood:'lose'});
-  sfx.win();kusudama();
+  sfx.win();kusudama();releaseWake();
   later(()=>{TEAMS.forEach(x=>{panels[x].actions.hidden=false;});},1300);
 }
 function showTitle(){
@@ -620,6 +576,7 @@ function tsunaTimeUp(){
   point(G.n>0?'aka':'shiro',{winBig:'じかんぎれ！',winSub:'リードしてたから かち！',loseBig:'おしい〜',loseSub:'あと すこし だった！'});
 }
 function pull(t){
+  if(performance.now()>=G.tsunaEnd){tsunaTimeUp();return;}
   let w=1;
   G.n+=t==='aka'?w:-w;
   G.n=Math.max(-TSUNA_N,Math.min(TSUNA_N,G.n));
@@ -685,6 +642,7 @@ TEAMS.forEach(t=>{
   panels[t].el.addEventListener('pointerdown',e=>{
     if(e.target.closest('button')) return;
     e.preventDefault();
+    lastInput=performance.now();if(!wake&&G.phase!=='idle'&&G.phase!=='end'&&G.phase!=='hidden') keepAwake();
     if(G.phase!=='idle'&&G.phase!=='end') ripple(t,e);
     ensureAudio();
     onTap(t,e);
@@ -733,6 +691,9 @@ function kusudama(){
 let wake=null;
 function keepAwake(){try{if(navigator.wakeLock&&!wake){navigator.wakeLock.request('screen').then(w=>{wake=w;w.addEventListener('release',()=>{wake=null;});}).catch(()=>{});}}catch(e){}}
 function releaseWake(){try{if(wake) wake.release();}catch(e){}wake=null;}
+/* 3分だれも触らなければ、画面が消えてよい（触ればまた消えないようにする） */
+let lastInput=performance.now();
+setInterval(()=>{if(wake&&performance.now()-lastInput>180000) releaseWake();},30000);
 function suspend(){
   G.from=G.phase;clearTimers();stopLoop();stopDrums();
   G.phase='hidden';
@@ -750,11 +711,11 @@ if(mqTurn){if(mqTurn.addEventListener) mqTurn.addEventListener('change',checkTur
 function resume(){
   if(G.phase!=='hidden'||play.hidden||isTurned()||document.visibilityState==='hidden') return;
   const f=G.from;G.from=null;
-  if(f==='start'||f==='result'||!G.cur) nextRound();else startEvent();
+  if(f==='start'||(f==='result'&&!G.redoing)||!G.cur) nextRound();else startEvent();
 }
 document.addEventListener('visibilitychange',()=>{
   if(document.visibilityState==='hidden'){if(!play.hidden&&G.phase!=='idle'&&G.phase!=='end'&&G.phase!=='hidden') suspend();}
-  else if(!play.hidden){keepAwake();if(G.phase==='hidden'&&!isTurned()) later(resume,500);}
+  else if(!play.hidden){if(G.phase!=='end'&&G.phase!=='idle') keepAwake();if(G.phase==='hidden'&&!isTurned()) later(resume,500);}
 });
 window.addEventListener('resize',()=>{
   if(!tsuna.hidden) layoutRope();
