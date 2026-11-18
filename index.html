@@ -154,6 +154,9 @@ button{touch-action:manipulation}
 .act{border:2px solid var(--sumi);border-radius:14px;padding:10px 16px 11px;font-family:var(--f-display);font-weight:400;font-size:17px;color:var(--sumi);box-shadow:0 4px 0 var(--sumi);cursor:pointer}
 .act.again{background:var(--kin)}
 .act.quit{background:var(--shiro)}
+.end-note{flex:1 0 100%;display:grid;justify-items:center;align-content:center;min-height:44px;padding:3px 4px;color:var(--fg);font-size:14px;font-weight:900;line-height:1.3;cursor:pointer}
+.end-note small{font-size:12px;font-weight:700}
+.end-note:focus-visible{outline:3px solid var(--kin);outline-offset:2px;border-radius:4px}
 .act:active{transform:translateY(3px);box-shadow:0 1px 0 var(--sumi)}
 .ripple{position:absolute;z-index:0;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;border:5px solid var(--fg);opacity:0;pointer-events:none;animation:rip .45s ease-out}
 .arena{position:relative;width:100%;flex:1;min-height:0}
@@ -192,6 +195,7 @@ button{touch-action:manipulation}
 @keyframes flipin{from{transform:perspective(400px) rotateY(85deg)}to{transform:none}}
 @keyframes rip{from{transform:scale(.25);opacity:.55}to{transform:scale(1.3);opacity:0}}
 @media (prefers-reduced-motion:reduce){.bunting i,.big.pop,.stage.wait .big,.stage.win::before,.card.flip,.ball.drop,.turn-ico{animation:none}.ripple{display:none}}
+@media (max-height:560px){#play[data-mode="end"] #p-aka .inner{gap:4px;padding-top:6px}#play[data-mode="end"] #p-aka .stage{gap:2px}#play[data-mode="end"] #p-aka .actions{gap:4px;margin-top:4px}#play[data-mode="end"] #p-aka .stage.win .big{font-size:min(10.5cqw,18cqh)}}
 </style>
 </head>
 <body>
@@ -273,6 +277,7 @@ button{touch-action:manipulation}
           <div class="actions" hidden>
             <button type="button" class="act again" data-act="again">もういっかい</button>
             <button type="button" class="act quit" data-act="quit">おわる</button>
+            <a class="end-note" href="https://note.com/chodo_lab/n/n5d3ebb4cd708" target="_blank" rel="noopener"><span>完全版を見る（note・300円）</span><small>体験版は3種目／完全版は8種目・ハンデつき</small></a>
           </div>
         </div>
         <p class="team"><span class="team-name">あかぐみ</span></p>
@@ -640,7 +645,7 @@ function ripple(t,e){
 }
 TEAMS.forEach(t=>{
   panels[t].el.addEventListener('pointerdown',e=>{
-    if(e.target.closest('button')) return;
+    if(e.target.closest('button, a.end-note')) return;
     e.preventDefault();
     lastInput=performance.now();if(!wake&&G.phase!=='idle'&&G.phase!=='end'&&G.phase!=='hidden') keepAwake();
     if(G.phase!=='idle'&&G.phase!=='end') ripple(t,e);
@@ -648,7 +653,7 @@ TEAMS.forEach(t=>{
     onTap(t,e);
   });
 });
-play.addEventListener('touchend',e=>{if(!e.target.closest('button')&&e.cancelable) e.preventDefault();},{passive:false});
+play.addEventListener('touchend',e=>{if(!e.target.closest('button, a.end-note')&&e.cancelable) e.preventDefault();},{passive:false});
 play.addEventListener('click',e=>{
   const b=e.target.closest('[data-act]');if(!b) return;
   if(b.dataset.act==='again') startMatch();else showTitle();
