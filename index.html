@@ -196,6 +196,10 @@ button{touch-action:manipulation}
 @keyframes rip{from{transform:scale(.25);opacity:.55}to{transform:scale(1.3);opacity:0}}
 @media (prefers-reduced-motion:reduce){.bunting i,.big.pop,.stage.wait .big,.stage.win::before,.card.flip,.ball.drop,.turn-ico{animation:none}.ripple{display:none}}
 @media (max-height:560px){#play[data-mode="end"] #p-aka .inner{gap:4px;padding-top:6px}#play[data-mode="end"] #p-aka .stage{gap:2px}#play[data-mode="end"] #p-aka .actions{gap:4px;margin-top:4px}#play[data-mode="end"] #p-aka .stage.win .big{font-size:min(10.5cqw,18cqh)}}
+.desktop-trial{display:none;margin:0;color:var(--sumi);font-size:14px}
+.desktop-trial a{display:inline-flex;align-items:center;min-height:44px;color:inherit;font-weight:900}
+.desktop-trial a:focus-visible{outline:3px solid var(--kin);outline-offset:3px}
+@media (pointer:fine){.desktop-trial{display:block}}
 </style>
 </head>
 <body>
@@ -219,6 +223,7 @@ button{touch-action:manipulation}
         </div>
         <p class="rule">スマホを ふたりの まんなかに おいて、じぶんの がわを タッチ！ さきに <strong id="rule-pts">3てん</strong> とった ほうが かち。</p>
         <button type="button" class="start" id="start">はじめる</button>
+        <p class="desktop-trial" data-web-only><a href="https://www.dlsite.com/ai/work/=/product_id/RJ01775495.html" target="_blank" rel="noopener">PC版の無料体験（DLsite）</a>　Fキー・Jキーで2人対戦</p>
         <section class="box program" aria-labelledby="prog-h">
           <h2 id="prog-h">プログラム</h2>
           <ol id="prog"></ol>
@@ -238,11 +243,11 @@ button{touch-action:manipulation}
             <li>対戦の記録（名前ごとの勝ち負け・いちばん速いドン・最近の5試合）が残ります</li>
           </ul>
           <a class="note-link" id="noteLink" href="https://note.com/chodo_lab/n/n5d3ebb4cd708" target="_blank" rel="noopener">完全版のくわしい説明（note）</a>
-          <p>パソコンでは、2人で同じキーボードのFキー・Jキーを使って遊べます。</p>
-          <a class="note-link" id="dlsiteLink" href="https://www.dlsite.com/ai/work/=/product_id/RJ01775495.html" target="_blank" rel="noopener">パソコン版を見る（DLsite）</a>
+          <p data-web-only>パソコンでは、2人で同じキーボードのFキー・Jキーを使って遊べます。</p>
+          <a class="note-link" id="dlsiteLink" data-web-only href="https://www.dlsite.com/ai/work/=/product_id/RJ01775495.html" target="_blank" rel="noopener">パソコン版を見る（DLsite）</a>
           <p>体験版は、遊んだ内容をどこにも送信しません。このブラウザに覚えるのは、音のオン・オフだけです。</p>
         </section>
-        <p class="credit">作った人：<a href="https://note.com/chodo_lab" target="_blank" rel="noopener">余白の実験室</a>　v1.0.2</p>
+        <p class="credit">作った人：<a href="https://note.com/chodo_lab" target="_blank" rel="noopener">余白の実験室</a>　v1.0.3</p>
       </div>
     </div>
   </section>
@@ -279,7 +284,7 @@ button{touch-action:manipulation}
           <div class="actions" hidden>
             <button type="button" class="act again" data-act="again">もういっかい</button>
             <button type="button" class="act quit" data-act="quit">おわる</button>
-            <a class="end-note" href="https://note.com/chodo_lab/n/n5d3ebb4cd708" target="_blank" rel="noopener"><span>完全版を見る（note・300円）</span><small>体験版は3種目／完全版は8種目・ハンデつき</small></a>
+            <a class="end-note" data-web-only href="https://note.com/chodo_lab/n/n5d3ebb4cd708" target="_blank" rel="noopener"><span>完全版を見る（note・300円）</span><small>体験版は3種目／完全版は8種目・ハンデつき</small></a>
           </div>
         </div>
         <p class="team"><span class="team-name">あかぐみ</span></p>
